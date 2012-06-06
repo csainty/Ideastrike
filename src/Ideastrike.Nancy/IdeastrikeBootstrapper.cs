@@ -84,6 +84,7 @@ namespace Ideastrike.Nancy
 
         protected override void ApplicationStartup(ILifetimeScope container, IPipelines pipelines)
         {
+            AppHarbify.EF.ConnectionFactory.Enable(true);
             pipelines.OnError.AddItemToEndOfPipeline(LogException);
             pipelines.BeforeRequest.AddItemToEndOfPipeline(DetectLanguage);
 
