@@ -30,7 +30,7 @@ namespace Ideastrike.Nancy.Models
         public override bool TrySetMember(SetMemberBinder binder, object value)
         {
             var key = binder.Name;
-            AddOrUpdateSetting(key, (string)value);
+            AddOrUpdateSetting(key, (global::Nancy.DynamicDictionaryValue)value);
 
             return true;
         }
