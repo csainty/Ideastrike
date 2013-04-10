@@ -28,7 +28,7 @@ namespace Ideastrike.Nancy.Modules
                                 };
         }
 
-        public Response ListIdeas(IEnumerable<Idea> ideas, SelectedTab selected, string ErrorMessage)
+        public dynamic ListIdeas(IEnumerable<Idea> ideas, SelectedTab selected, string ErrorMessage)
         {
             User user = Context.GetCurrentUser(_users);
 
@@ -38,10 +38,8 @@ namespace Ideastrike.Nancy.Modules
                 {
                     if (i.Votes.Any(u => u.UserId == user.Id))
                         i.UserHasVoted = true;
-
                 }
             }
-
 
             var m = Context.Model((string)_settings.SiteTitle);
             m.Name = _settings.Name;

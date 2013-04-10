@@ -6,16 +6,16 @@ using Nancy.ErrorHandling;
 
 namespace Ideastrike.Nancy.Helpers
 {
-    public class ElmahErrorHandler : IErrorHandler
+    public class ElmahErrorHandler : IStatusCodeHandler
     {
         private readonly HttpStatusCode[] _supportedStatusCodes = new[]
-    {
-        HttpStatusCode.InternalServerError,
-        HttpStatusCode.BadRequest,
-        HttpStatusCode.NotFound
-    };
+        {
+            HttpStatusCode.InternalServerError,
+            HttpStatusCode.BadRequest,
+            HttpStatusCode.NotFound
+        };
 
-        public bool HandlesStatusCode(HttpStatusCode statusCode)
+        public bool HandlesStatusCode(HttpStatusCode statusCode, NancyContext context)
         {
             return _supportedStatusCodes.Any(s => s == statusCode);
         }

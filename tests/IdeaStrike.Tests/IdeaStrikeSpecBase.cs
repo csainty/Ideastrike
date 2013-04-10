@@ -46,7 +46,6 @@ namespace IdeaStrike.Tests
             {
                 with.Module<TModule>();
                 with.Dependencies(_Users.Object, _Ideas.Object, _Features.Object, _Activity.Object, _Settings.Object, _Images.Object);
-                with.DisableAutoRegistration();
                 with.NancyEngine<NancyEngine>();
                 with.ViewFactory(ViewFactory.Object);
                 with.RootPathProvider<CustomRootPathProvider>();
