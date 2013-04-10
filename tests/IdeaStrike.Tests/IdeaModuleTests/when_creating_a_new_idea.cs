@@ -12,7 +12,12 @@ namespace IdeaStrike.Tests.IdeaModuleTests
         {
             EnableFormsAuth();
 
-            Post("/idea/new", with => with.LoggedInUser(CreateMockUser("shiftkey")));
+            Post("/idea/new", with =>
+            {
+                with.LoggedInUser(CreateMockUser("shiftkey"));
+                with.FormValue("Title", "Idea #1");
+                with.FormValue("Description", "A new idea");
+            });
         }
 
         [Fact]
