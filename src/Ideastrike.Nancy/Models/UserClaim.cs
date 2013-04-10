@@ -1,11 +1,13 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ideastrike.Nancy.Models
 {
     public class UserClaim
     {
         public virtual User User { get; set; }
+
         public virtual Claim Claim { get; set; }
 
         [Key, ForeignKey("User"), Column(Order = 0)]

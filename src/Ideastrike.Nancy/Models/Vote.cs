@@ -1,5 +1,6 @@
-using System.ComponentModel.DataAnnotations;
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ideastrike.Nancy.Models
 {
@@ -16,6 +17,7 @@ namespace Ideastrike.Nancy.Models
         public DateTime? Time { get; set; }
 
         public virtual User User { get; set; }
+
         public virtual Idea Idea { get; set; }
     }
 }

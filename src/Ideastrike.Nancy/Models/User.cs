@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using Nancy;
 using Nancy.Security;
@@ -19,9 +20,13 @@ namespace Ideastrike.Nancy.Models
         public Guid Id { get; set; }
 
         public string UserName { get; set; }
+
         public string Email { get; set; }
+
         public string Identity { get; set; }
+
         public string AvatarUrl { get; set; }
+
         public string Github { get; set; }
 
         public bool IsActive { get; set; }
