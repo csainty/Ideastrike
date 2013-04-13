@@ -86,7 +86,7 @@ namespace Ideastrike.Nancy
         {
             pipelines.OnError.AddItemToEndOfPipeline(LogException);
             pipelines.BeforeRequest.AddItemToEndOfPipeline(DetectLanguage);
-
+            AppHarbify.EF.ConnectionFactory.Enable(true);
             DoMigrations();
         }
 
